@@ -51,6 +51,8 @@ jobs:
       with:
         python-version: ${{ matrix.python-version }}
         architecture: ${{ matrix.architecture }}
+      env:
+        PIP_TRUSTED_HOST: pypi.python.org 
 
     - name: Set up TCL
       if: "contains(matrix.python-version, 'pypy')"
