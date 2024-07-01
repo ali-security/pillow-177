@@ -86,7 +86,7 @@ def cmd_msbuild(
             "/m",
         ]
     ).format(**locals())
-
+# https://sourceforge.net/projects/libjpeg-turbo/2.0.4/libjpeg-turbo-2.0.4.tar.gz/download 
 # https://sourceforge.net/projects/libjpeg-turbo/files/2.0.4/libjpeg-turbo-2.0.4.tar.gz/download
 SF_MIRROR = "https://sourceforge.net"
 
@@ -105,7 +105,7 @@ header = [
 # dependencies, listed in order of compilation
 deps = {
     "libjpeg": {
-        "url": SF_MIRROR + "/projects/libjpeg-turbo/2.0.4/libjpeg-turbo-2.0.4.tar.gz/download",
+        "url": SF_MIRROR + "/projects/libjpeg-turbo/files/2.0.4/libjpeg-turbo-2.0.4.tar.gz/download",
         "filename": "libjpeg-turbo-2.0.4.tar.gz",
         "dir": "libjpeg-turbo-2.0.4",
         "build": [
@@ -195,7 +195,7 @@ deps = {
         # "bins": [r"objs\{msbuild_arch}\Release\freetype.dll"],
     },
     "lcms2": {
-        "url": SF_MIRROR + "/projects/lcms/lcms/2.11/lcms2-2.11.tar.gz/download",
+        "url": SF_MIRROR + "/projects/lcms/lcms/files/2.11/lcms2-2.11.tar.gz/download",
         "filename": "lcms2-2.11.tar.gz",
         "dir": "lcms2-2.11",
         "patch": {
