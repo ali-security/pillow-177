@@ -21,7 +21,7 @@ environment:
 install:
 - curl -fsSL -o pillow-depends.zip https://github.com/python-pillow/pillow-depends/archive/503ff2ff53e2f0446aa06a4a6c6cb17361b108e2.zip
 - 7z x pillow-depends.zip -oc:\
-- mv c:\pillow-depends-master c:\pillow-depends
+- mv c:\pillow-depends-503ff2ff53e2f0446aa06a4a6c6cb17361b108e2 c:\pillow-depends
 - xcopy /s c:\pillow-depends\test_images\* c:\pillow\tests\images
 - 7z x ..\pillow-depends\nasm-2.14.02-win64.zip -oc:\
 - curl -fsSL -o gs952.exe https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs952/gs952w32.exe
