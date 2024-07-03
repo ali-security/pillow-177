@@ -23,11 +23,9 @@ sudo apt-get -qq install libfreetype6-dev liblcms2-dev python3-tk\
 
 
 sudo apt-get remove libtiff
-sudo apt-get purge libtiff
 suto apt-get install libtiff=4.1.0
 
 sudo apt-get remove libtiff-dev
-sudo apt-get purge libtiff-dev
 wget http://archive.ubuntu.com/ubuntu/pool/main/t/tiff/libtiff-dev_4.1.0+git191117-2build1_amd64.deb
 sudo dpkg -i libtiff-dev_4.1.0+git191117-2build1_amd64.deb
 
