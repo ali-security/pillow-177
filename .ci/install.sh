@@ -26,7 +26,7 @@ echo "update"
 sudo apt-get update
 
 echo "remove libtiff5"
-sudo apt-get purge remove nginx-*
+sudo apt-get purge nginx-*
 sudo apt-get purge libtiff5
 
 echo "remove libtiff4-dev"
