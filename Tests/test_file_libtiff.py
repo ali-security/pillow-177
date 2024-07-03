@@ -243,6 +243,10 @@ class TestFileLibTiff(LibTiffTestCase):
 
         TiffImagePlugin.WRITE_LIBTIFF = False
 
+    pytest.mark.skipif(
+        not getattr(Image.core, "libtiff_support_custom_tags", False),
+        reason="Custom tags not supported by older libtiff",
+    )
     def test_custom_metadata(self, tmp_path):
         tc = namedtuple("test_case", "value,type,supported_by_default")
         custom = {

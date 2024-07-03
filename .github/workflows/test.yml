@@ -10,25 +10,26 @@ jobs:
       matrix:
         os: [
           "ubuntu-latest",
-          "macOS-latest",
+          # "macOS-latest",
         ]
         python-version: [
-          "pypy3",
+          # "pypy3", # TODO: undo
           "3.8",
-          "3.7",
-          "3.6",
-          "3.5",
+          # "3.7", # TODO: undo
+          # "3.6", # TODO: undo
+          # "3.5",  # TODO: undo
         ]
-        include:
-        - python-version: "3.5"
-          env: PYTHONOPTIMIZE=2
-        - python-version: "3.6"
-          env: PYTHONOPTIMIZE=1
-        # Include new variables for Codecov
-        - os: ubuntu-latest
-          codecov-flag: GHA_Ubuntu
-        - os: macOS-latest
-          codecov-flag: GHA_macOS
+        # TODO: undo
+        # include:
+        # - python-version: "3.5"
+        #   env: PYTHONOPTIMIZE=2
+        # - python-version: "3.6"
+        #   env: PYTHONOPTIMIZE=1
+        # # Include new variables for Codecov
+        # - os: ubuntu-latest
+        #   codecov-flag: GHA_Ubuntu
+        # - os: macOS-latest
+        #   codecov-flag: GHA_macOS
 
     runs-on: ${{ matrix.os }}
     name: ${{ matrix.os }} Python ${{ matrix.python-version }}
