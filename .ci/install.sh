@@ -24,8 +24,8 @@ sudo apt-get -qq install libfreetype6-dev liblcms2-dev python3-tk\
 
 echo "update"
 sudo apt-get update
-echo "remove libtiff4"
-sudo apt-get remove libtiff4
+# echo "remove libtiff4"
+# sudo apt-get remove libtiff4
 
 echo "remove libtiff4-dev"
 sudo apt-get remove libtiff-dev
