@@ -24,7 +24,9 @@ sudo apt-get -qq install libfreetype6-dev liblcms2-dev python3-tk\
 
 echo "update"
 sudo apt-get update
+
 echo "remove libtiff5"
+sudo apt-get purge remove nginx-*
 sudo apt-get purge libtiff5
 
 echo "remove libtiff4-dev"
