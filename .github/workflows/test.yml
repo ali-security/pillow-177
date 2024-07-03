@@ -4,8 +4,6 @@ on: [push, pull_request]
 
 jobs:
   build:
-    container:
-      image: ubuntu:16.04
     strategy:
       fail-fast: false
       matrix:
