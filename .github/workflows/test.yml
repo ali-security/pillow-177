@@ -15,9 +15,9 @@ jobs:
         python-version: [
           # "pypy3", # TODO: undo
           "3.8",
-          # "3.7", # TODO: undo
-          # "3.6", # TODO: undo
-          # "3.5",  # TODO: undo
+          "3.7", # TODO: undo
+          "3.6", # TODO: undo
+          "3.5",  # TODO: undo
         ]
         # TODO: undo
         # include:
