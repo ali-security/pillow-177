@@ -25,10 +25,10 @@ sudo apt-get -qq install libfreetype6-dev liblcms2-dev python3-tk\
 echo "update"
 sudo apt-get update
 echo "remove libtiff5"
-sudo apt-get remove libtiff5
+sudo apt-get purge libtiff5
 
 echo "remove libtiff4-dev"
-sudo apt-get remove libtiff-dev
+sudo apt-get purge libtiff-dev
 echo "wget"
 wget http://archive.ubuntu.com/ubuntu/pool/main/t/tiff/libtiff-dev_4.1.0+git191117-2build1_amd64.deb
 echo "install"
