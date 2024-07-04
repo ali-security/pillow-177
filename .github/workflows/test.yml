@@ -48,9 +48,11 @@ jobs:
 
     - name: playground
       run: |
-        which display
-        which eog
-        which xv
+        echo `which display`
+        echo `which eog`
+        echo `which xv`
+        sudo apt-get install eog
+
 
     - name: macOS cache
       uses: actions/cache@v1
