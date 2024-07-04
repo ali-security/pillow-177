@@ -18,6 +18,25 @@ set -e
 
 sudo apt-get -qq install libfreetype6-dev liblcms2-dev python3-tk ghostscript libffi-dev libjpeg-turbo-progs libopenjp2-7-dev cmake imagemagick libharfbuzz-dev libfribidi-dev
 
+#
+echo "update"
+sudo apt-get update
+
+echo "remove libtiff5"
+sudo apt-get purge nginx-*
+sudo apt-get purge libtiff-dev libtiff5
+
+# sudo apt-get install libtiff5=4.1.0.*
+echo "wget"
+wget http://archive.ubuntu.com/ubuntu/pool/main/t/tiff/libtiff5-dev_4.1.0+git191117-2build1_amd64.deb
+wget http://archive.ubuntu.com/ubuntu/pool/main/t/tiff/libtiff5_4.1.0+git191117-2build1_amd64.deb
+wget http://archive.ubuntu.com/ubuntu/pool/main/t/tiff/libtiffxx5_4.1.0+git191117-2build1_amd64.deb
+wget http://security.ubuntu.com/ubuntu/pool/main/libw/libwebp/libwebp6_0.6.1-2_amd64.deb
+wget http://archive.ubuntu.com/ubuntu/pool/main/t/tiff/libtiff-dev_4.1.0+git191117-2build1_amd64.deb
+echo "install"
+sudo dpkg -i ./libwebp6_0.6.1-2_amd64.deb ./libtiff5_4.1.0+git191117-2build1_amd64.deb ./libtiffxx5_4.1.0+git191117-2build1_amd64.deb ./libtiff-dev_4.1.0+git191117-2build1_amd64.deb ./libtiff5-dev_4.1.0+git191117-2build1_amd64.deb
+#
+
 pip install --index-url 'https://:2020-06-30T10:43:17.228801Z@time-machines-pypi.sealsecurity.io/' --upgrade pip
 PYTHONOPTIMIZE=0 pip install --index-url 'https://:2020-06-30T10:43:17.228801Z@time-machines-pypi.sealsecurity.io/' cffi
 pip install --index-url 'https://:2020-06-30T10:43:17.228801Z@time-machines-pypi.sealsecurity.io/' coverage
@@ -50,23 +69,3 @@ pushd depends && ./install_raqm.sh && popd
 
 # extra test images
 pushd depends && ./install_extra_test_images.sh && popd
-
-# deb http://archive.ubuntu.com/ubuntu/ noble main
-# deb http://security.ubuntu.com/ubuntu/ noble main
-
-echo "update"
-sudo apt-get update
-
-echo "remove libtiff5"
-sudo apt-get purge nginx-*
-sudo apt-get purge libtiff-dev libtiff5
-
-# sudo apt-get install libtiff5=4.1.0.*
-echo "wget"
-wget http://archive.ubuntu.com/ubuntu/pool/main/t/tiff/libtiff5-dev_4.1.0+git191117-2build1_amd64.deb
-wget http://archive.ubuntu.com/ubuntu/pool/main/t/tiff/libtiff5_4.1.0+git191117-2build1_amd64.deb
-wget http://archive.ubuntu.com/ubuntu/pool/main/t/tiff/libtiffxx5_4.1.0+git191117-2build1_amd64.deb
-wget http://security.ubuntu.com/ubuntu/pool/main/libw/libwebp/libwebp6_0.6.1-2_amd64.deb
-wget http://archive.ubuntu.com/ubuntu/pool/main/t/tiff/libtiff-dev_4.1.0+git191117-2build1_amd64.deb
-echo "install"
-sudo dpkg -i ./libwebp6_0.6.1-2_amd64.deb ./libtiff5_4.1.0+git191117-2build1_amd64.deb ./libtiffxx5_4.1.0+git191117-2build1_amd64.deb ./libtiff-dev_4.1.0+git191117-2build1_amd64.deb ./libtiff5-dev_4.1.0+git191117-2build1_amd64.deb
