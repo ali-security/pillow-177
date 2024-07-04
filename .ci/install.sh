@@ -24,14 +24,14 @@ echo "sedd"
 cat /etc/apt/sources.list
 
 sudo bash -c 'echo "deb http://archive.ubuntu.com/ubuntu jammy main restricted universe multiverse" >> /etc/apt/sources.list'
-sudo bash -c 'echo "deb http://security.ubuntu.com/ubuntu jammy main restricted universe multiverse" >> /etc/apt/sources.list'
+sudo bash -c 'echo "deb http://security.ubuntu.com/ubuntu main restricted universe multiverse" >> /etc/apt/sources.list'
 
 echo "sedd2"
 cat /etc/apt/sources.list
 
 sudo apt-get update
 
-sudo apt-cache madison libfreetype6-dev
+sudo apt-cache madison libfreetype-dev
 exit 123
 #
 sudo apt-get -qq install libfreetype6-dev liblcms2-dev python3-tk ghostscript libffi-dev libjpeg-turbo-progs libopenjp2-7-dev cmake imagemagick libharfbuzz-dev libfribidi-dev
