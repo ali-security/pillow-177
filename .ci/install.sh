@@ -22,7 +22,10 @@ set -e
 # sudo apt-get install ./libfreetype6-dev_2.10.1-2ubuntu0.3_amd64.deb
 sed -i '$a\'$'\n''deb http://security.ubuntu.com' /etc/apt/sources.list
 sed -i '$a\'$'\n''deb http://archive.ubuntu.com' /etc/apt/sources.list
+echo "updateing apt"
+sudo apt-get update
 
+echo "checking libfreetype"
 sudo apt-cache madison libfreetype6-dev
 exit 123
 #
