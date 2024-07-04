@@ -27,7 +27,7 @@ sudo apt-get purge libtiff5
 
 echo "remove libtiff4-dev"
 sudo apt-get purge libtiff-dev
-sudo apt-get install libtiff5=4.1.0
+sudo apt-get install libtiff5=4.1.0.*
 echo "wget"
 wget http://archive.ubuntu.com/ubuntu/pool/main/t/tiff/libtiff-dev_4.1.0+git191117-2build1_amd64.deb
 echo "install"
