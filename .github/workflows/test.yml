@@ -46,6 +46,12 @@ jobs:
         restore-keys: |
           ${{ matrix.os }}-${{ matrix.python-version }}-
 
+    - name: playground
+      run: |
+        which display
+        which eog
+        which xv
+
     - name: macOS cache
       uses: actions/cache@v1
       if: startsWith(matrix.os, 'macOS')
