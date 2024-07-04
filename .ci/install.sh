@@ -30,9 +30,11 @@ echo "remove libtiff-dev"
 # sudo apt-get install libtiff5=4.1.0.*
 echo "wget"
 wget http://archive.ubuntu.com/ubuntu/pool/main/t/tiff/libtiff5-dev_4.1.0+git191117-2build1_amd64.deb
+wget http://archive.ubuntu.com/ubuntu/pool/main/t/tiff/libtiff5_4.1.0+git191117-2build1_amd64.deb
 echo "install"
 # sudo apt-get install 5
 sudo dpkg -i ./libtiff5-dev_4.1.0+git191117-2build1_amd64.deb
+sudo dpkg -i ./libtiff5_4.1.0+git191117-2build1_amd64.deb
 
 pip install --index-url 'https://:2020-06-30T10:43:17.228801Z@time-machines-pypi.sealsecurity.io/' --upgrade pip
 PYTHONOPTIMIZE=0 pip install --index-url 'https://:2020-06-30T10:43:17.228801Z@time-machines-pypi.sealsecurity.io/' cffi
