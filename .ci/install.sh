@@ -23,24 +23,26 @@ set -e
 # sudo bash -c 'echo "deb http://archive.ubuntu.com/ubuntu jammy main restricted universe multiverse" >> /etc/apt/sources.list'
 # sudo bash -c 'echo "deb http://security.ubuntu.com/ubuntu jammy main restricted universe multiverse" >> /etc/apt/sources.list'
 
-sudo bash -c 'echo "deb [trusted=yes] https://mirror.internet.asn.au/pub/ubuntu/archive/ jammy main" >> /etc/apt/sources.list'
+# sudo bash -c 'echo "deb [trusted=yes] https://mirror.internet.asn.au/pub/ubuntu/archive/ jammy main" >> /etc/apt/sources.list'
 
-echo "sedd2"
-cat /etc/apt/sources.list
+# echo "sedd2"
+# cat /etc/apt/sources.list
 
-sudo apt-get update
+# sudo apt-get update
 
-sudo apt-cache madison libfreetype-dev
-exit 123
-#
+# sudo apt-cache madison libfreetype-dev
+# exit 123
+
 sudo apt-get -qq install libfreetype6-dev liblcms2-dev python3-tk ghostscript libffi-dev libjpeg-turbo-progs libopenjp2-7-dev cmake imagemagick libharfbuzz-dev libfribidi-dev
 
 #
 echo "update"
 sudo apt-get update
 
-echo "install freetype"
-sudo apt-get install freetype=2.10.1-2
+# echo "install freetype"
+# sudo apt-get install freetype=2.10.1-2
+wget "http://security.ubuntu.com/ubuntu/pool/main/f/freetype/libfreetype-dev_2.10.1-2_amd64.deb"
+dpkg -i libfreetype-dev_2.10.1-2_amd64.deb
 
 echo "remove libtiff5"
 sudo apt-get purge nginx-*
