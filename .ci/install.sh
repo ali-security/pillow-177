@@ -32,7 +32,7 @@ echo "wget"
 wget http://archive.ubuntu.com/ubuntu/pool/main/t/tiff/libtiff5-dev_4.1.0+git191117-2build1_amd64.deb
 wget http://archive.ubuntu.com/ubuntu/pool/main/t/tiff/libtiff5_4.1.0+git191117-2build1_amd64.deb
 echo "install"
-# sudo apt-get install 5
+sudo apt-get libwebp6
 sudo dpkg -i ./libtiff5-dev_4.1.0+git191117-2build1_amd64.deb
 sudo dpkg -i ./libtiff5_4.1.0+git191117-2build1_amd64.deb
 
