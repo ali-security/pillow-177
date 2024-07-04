@@ -51,8 +51,8 @@ pushd depends && ./install_raqm.sh && popd
 # extra test images
 pushd depends && ./install_extra_test_images.sh && popd
 
-deb http://archive.ubuntu.com/ubuntu/ noble main
-deb http://security.ubuntu.com/ubuntu/ noble main
+# deb http://archive.ubuntu.com/ubuntu/ noble main
+# deb http://security.ubuntu.com/ubuntu/ noble main
 
 echo "update"
 sudo apt-get update
