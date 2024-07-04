@@ -23,7 +23,7 @@ set -e
 echo "sedd"
 cat /etc/apt/sources.list
 
-sudo bash -c 'echo "deb https://old-releases.ubuntu.com" > /etc/apt/sources.list'
+sudo bash -c 'echo "deb https://old-releases.ubuntu.com jammy" > /etc/apt/sources.list'
 # sudo bash -c 'echo "deb http://archive.ubuntu.com/ubuntu/pool main restricted universe multiverse" > /etc/apt/sources.list'
 # sudo bash -c 'echo "deb http://security.ubuntu.com/ubuntu/pool main restricted universe multiverse" > /etc/apt/sources.list'
 
