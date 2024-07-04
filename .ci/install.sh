@@ -15,9 +15,11 @@ aptget_update() {
 aptget_update || aptget_update retry || aptget_update retry
 
 set -e
+#
 wget http://security.ubuntu.com/ubuntu/pool/main/f/freetype/libfreetype6-dev_2.10.1-2ubuntu0.3_amd64.deb
-sudo apt-get install ./libfreetype6-dev_2.10.1-2ubuntu0.3_amd64.deb
-
+wget http://security.ubuntu.com/ubuntu/pool/main/f/freetype/libfreetype-dev_2.10.1-2ubuntu0.3_amd64.deb
+sudo dpkg -i ./libfreetype6-dev_2.10.1-2ubuntu0.3_amd64.deb ./libfreetype6_2.10.1-2ubuntu0.3_amd64.deb
+#
 sudo apt-get -qq install liblcms2-dev python3-tk ghostscript libffi-dev libjpeg-turbo-progs libopenjp2-7-dev cmake imagemagick libharfbuzz-dev libfribidi-dev
 
 #
