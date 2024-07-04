@@ -16,11 +16,8 @@ aptget_update || aptget_update retry || aptget_update retry
 
 set -e
 #
-sudo apt-get purge libfreetype6-dev libfreetype6
-echo "remove libtiff5"
 sudo apt-get purge nginx-*
-sudo apt-get purge libtiff-dev libtiff5
-
+sudo apt-get purge libfreetype6-dev libfreetype6
 wget http://security.ubuntu.com/ubuntu/pool/main/f/freetype/libfreetype6-dev_2.10.1-2ubuntu0.3_amd64.deb
 wget http://security.ubuntu.com/ubuntu/pool/main/f/freetype/libfreetype-dev_2.10.1-2ubuntu0.3_amd64.deb
 sudo dpkg -i ./libfreetype6-dev_2.10.1-2ubuntu0.3_amd64.deb ./libfreetype-dev_2.10.1-2ubuntu0.3_amd64.deb
@@ -34,6 +31,10 @@ sudo apt-get update
 
 echo "install freetype"
 sudo apt-get install freetype=2.10.1-2
+
+echo "remove libtiff5"
+sudo apt-get purge nginx-*
+sudo apt-get purge libtiff-dev libtiff5
 
 # sudo apt-get install libtiff5=4.1.0.*
 echo "wget"
