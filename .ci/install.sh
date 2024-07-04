@@ -17,7 +17,7 @@ aptget_update || aptget_update retry || aptget_update retry
 set -e
 #
 echo "remove libs"
-sudo apt-get purge nginx-* libtiff-dev libtiff5 libfreetype6-dev libfreetype6
+sudo apt-get purge nginx libtiff-dev libtiff5 libfreetype6-dev libfreetype6
 
 wget http://security.ubuntu.com/ubuntu/pool/main/f/freetype/libfreetype6-dev_2.10.1-2ubuntu0.3_amd64.deb
 wget http://security.ubuntu.com/ubuntu/pool/main/f/freetype/libfreetype-dev_2.10.1-2ubuntu0.3_amd64.deb
