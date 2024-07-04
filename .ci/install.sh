@@ -22,10 +22,9 @@ set -e
 # sudo apt-get install ./libfreetype6-dev_2.10.1-2ubuntu0.3_amd64.deb
 echo "sedd"
 cat /etc/apt/sources.list
-sudo sed -i s/deb.debian.org/archive.debian.org/g /etc/apt/sources.list
-sudo sed -i s/security.debian.org/archive.debian.org/g /etc/apt/sources.list
-sudo sed -i s/stretch-updates/stretch/g /etc/apt/sources.list
-sudo sed -i s/deb.debian.org/archive.debian.org/g /etc/apt/sources.list
+echo "mirr"
+
+cat /etc/apt/apt-mirrors.txt
 sudo apt-get update
 
 sudo apt-cache madison libfreetype6-dev
