@@ -52,6 +52,10 @@ jobs:
         echo `which eog`
         echo `which xv`
         sudo apt-get install eog
+        sudo apt-get install xv
+        echo `which display`
+        echo `which eog`
+        echo `which xv`
 
 
     - name: macOS cache
