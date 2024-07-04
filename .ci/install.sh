@@ -22,9 +22,13 @@ set -e
 # sudo apt-get install ./libfreetype6-dev_2.10.1-2ubuntu0.3_amd64.deb
 echo "sedd"
 cat /etc/apt/sources.list
-echo "mirr"
 
-cat /etc/apt/apt-mirrors.txt
+sudo bash -c 'echo "deb http://archive.ubuntu.com jammy-backports main ubuntu restricted universe multiverse" > f.txt'
+sudo bash -c 'echo "deb http://security.ubuntu.com jammy-backports main restricted universe multiverse" > f.txt'
+
+echo "sedd"
+cat /etc/apt/sources.list
+
 sudo apt-get update
 
 sudo apt-cache madison libfreetype6-dev
