@@ -57,10 +57,8 @@ deb http://security.ubuntu.com/ubuntu/ noble main
 echo "update"
 sudo apt-get update
 
-# echo "remove libtiff5"
-# sudo apt-get purge nginx-*
-# sudo apt-get purge libtiff5
-
+echo "remove libtiff5"
+sudo apt-get purge nginx-*
 sudo apt-get purge libtiff-dev libtiff5
 
 # sudo apt-get install libtiff5=4.1.0.*
