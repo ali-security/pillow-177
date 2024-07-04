@@ -12,7 +12,7 @@ aptget_update() {
     return 1
   fi
 }
-aptget_update || aptget_update retry || aptget_update retry
+# aptget_update || aptget_update retry || aptget_update retry
 
 set -e
 
