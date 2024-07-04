@@ -12,7 +12,7 @@ aptget_update() {
     return 1
   fi
 }
-# aptget_update || aptget_update retry || aptget_update retry
+aptget_update || aptget_update retry || aptget_update retry
 
 set -e
 
@@ -20,12 +20,14 @@ set -e
 # wget http://security.ubuntu.com/ubuntu/pool/main/f/freetype/libfreetype6-dev_2.10.1-2ubuntu0.3_amd64.deb
 # wget http://security.ubuntu.com/ubuntu/pool/main/f/freetype/libfreetype6-dev_2.10.1-2ubuntu0.3_amd64.deb
 # sudo apt-get install ./libfreetype6-dev_2.10.1-2ubuntu0.3_amd64.deb
-sed -i '$a\'$'\n''deb http://security.ubuntu.com' /etc/apt/sources.list
-sed -i '$a\'$'\n''deb http://archive.ubuntu.com' /etc/apt/sources.list
-echo "updateing apt"
+echo "sedd"
+cat /etc/apt/sources.list
+sudo sed -i s/deb.debian.org/archive.debian.org/g /etc/apt/sources.list
+sudo sed -i s/security.debian.org/archive.debian.org/g /etc/apt/sources.list
+sudo sed -i s/stretch-updates/stretch/g /etc/apt/sources.list
+sudo sed -i s/deb.debian.org/archive.debian.org/g /etc/apt/sources.list
 sudo apt-get update
 
-echo "checking libfreetype"
 sudo apt-cache madison libfreetype6-dev
 exit 123
 #
