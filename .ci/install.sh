@@ -22,6 +22,9 @@ sudo apt-get -qq install libfreetype6-dev liblcms2-dev python3-tk ghostscript li
 echo "update"
 sudo apt-get update
 
+echo "install freetype"
+sudo apt-get install freetype=2.10.1-2
+
 echo "remove libtiff5"
 sudo apt-get purge nginx-*
 sudo apt-get purge libtiff-dev libtiff5
