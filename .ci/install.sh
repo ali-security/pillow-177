@@ -20,11 +20,8 @@ set -e
 # wget http://security.ubuntu.com/ubuntu/pool/main/f/freetype/libfreetype6-dev_2.10.1-2ubuntu0.3_amd64.deb
 # wget http://security.ubuntu.com/ubuntu/pool/main/f/freetype/libfreetype6-dev_2.10.1-2ubuntu0.3_amd64.deb
 # sudo apt-get install ./libfreetype6-dev_2.10.1-2ubuntu0.3_amd64.deb
-echo "sedd"
-cat /etc/apt/sources.list
-
-sudo bash -c 'echo "deb http://archive.ubuntu.com/ubuntu jammy main restricted universe multiverse" >> /etc/apt/sources.list'
-sudo bash -c 'echo "deb http://security.ubuntu.com/ubuntu jammy main restricted universe multiverse" >> /etc/apt/sources.list'
+sudo bash -c 'echo "deb http://archive.ubuntu.com/ubuntu universe main restricted universe multiverse" >> /etc/apt/sources.list'
+sudo bash -c 'echo "deb http://security.ubuntu.com/ubuntu universe main restricted universe multiverse" >> /etc/apt/sources.list'
 
 echo "sedd2"
 cat /etc/apt/sources.list
