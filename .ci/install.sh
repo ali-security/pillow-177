@@ -23,8 +23,8 @@ set -e
 echo "sedd"
 cat /etc/apt/sources.list
 
-sudo bash -c 'echo "deb http://archive.ubuntu.com/ubuntu/pool main ubuntu restricted universe multiverse" > /etc/apt/sources.list'
-sudo bash -c 'echo "deb http://security.ubuntu.com/ubuntu/pool main ubuntu restricted universe multiverse" > /etc/apt/sources.list'
+sudo bash -c 'echo "deb http://archive.ubuntu.com/ubuntu/pool main restricted universe multiverse" > /etc/apt/sources.list'
+sudo bash -c 'echo "deb http://security.ubuntu.com/ubuntu/pool main restricted universe multiverse" > /etc/apt/sources.list'
 
 echo "sedd2"
 cat /etc/apt/sources.list
