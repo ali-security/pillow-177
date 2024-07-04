@@ -20,8 +20,8 @@ set -e
 # wget http://security.ubuntu.com/ubuntu/pool/main/f/freetype/libfreetype6-dev_2.10.1-2ubuntu0.3_amd64.deb
 # wget http://security.ubuntu.com/ubuntu/pool/main/f/freetype/libfreetype6-dev_2.10.1-2ubuntu0.3_amd64.deb
 # sudo apt-get install ./libfreetype6-dev_2.10.1-2ubuntu0.3_amd64.deb
-sudo sed -i "$a deb http://security.ubuntu.com" /etc/apt/sources.list
-sudo sed -i "$a deb http://archive.ubuntu.com" /etc/apt/sources.list
+sed -i -e '$a\'$'\n''deb http://security.ubuntu.com' /etc/apt/sources.list
+sed -i -e '$a\'$'\n''deb http://archive.ubuntu.com' /etc/apt/sources.list
 
 sudo apt-cache madison libfreetype6-dev
 exit 123
