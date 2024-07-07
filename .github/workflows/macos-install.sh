@@ -19,4 +19,4 @@ pip install --index-url 'https://:2020-06-30T10:43:17.228801Z@time-machines-pypi
 pushd depends && ./install_extra_test_images.sh && popd
 
 # install zlib / zlib-devel ?
-brew install zlib1g-dev
+brew link zlib
