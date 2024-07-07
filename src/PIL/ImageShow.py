@@ -52,12 +52,9 @@ def show(image, title=None, **options):
     :param \**options: Additional viewer options.
     :returns: ``True`` if a suitable viewer was found, ``False`` otherwise.
     """
-    print("aaaaaaaa")
     for viewer in _viewers:
-        print(viewer.__class__.__name__)
         if viewer.show(image, title=title, **options):
             return 1
-    print("aaaaaaaa")
     return 0
 
 
@@ -196,7 +193,7 @@ class DisplayViewer(UnixViewer):
     """The ImageMagick ``display`` command."""
 
     def get_command_ex(self, file, **options):
-        command = executable = "display"
+        command = executable = "magick display"
         return command, executable
 
 
