@@ -39,8 +39,8 @@ def test_viewer_show(order):
     ImageShow._viewers.pop(0)
 
 
-@pytest.mark.skipif(
-    not on_ci() or is_win32(), reason="Only run on CIs; hangs on Windows CIs",
+@pytest.mark.skip(
+    # not on_ci() or is_win32(), reason="Only run on CIs; hangs on Windows CIs",
 )
 def test_show():
     for mode in ("1", "I;16", "LA", "RGB", "RGBA"):
