@@ -193,7 +193,8 @@ class DisplayViewer(UnixViewer):
     """The ImageMagick ``display`` command."""
 
     def get_command_ex(self, file, **options):
-        command = executable = "magick display"
+        command = executable = "magick"
+        command += " display"
         return command, executable
 
 
