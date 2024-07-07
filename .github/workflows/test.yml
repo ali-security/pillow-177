@@ -9,14 +9,14 @@ jobs:
       matrix:
         os: [
           # "ubuntu-latest",
-          "macOS-latest",
+          "macOS-11",
         ]
         python-version: [
           # "pypy3", # TODO: undo
           "3.8",
-          "3.7", 
-          "3.6", 
-          "3.5", 
+          # "3.7", 
+          # "3.6", 
+          # "3.5", 
         ]
         # TODO: undo
         # include:
