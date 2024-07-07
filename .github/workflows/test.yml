@@ -14,9 +14,9 @@ jobs:
         python-version: [
           # "pypy3", # TODO: undo
           "3.8",
-          # "3.7", # TODO: undo
-          # "3.6", # TODO: undo
-          # "3.5",  # TODO: undo
+          "3.7", 
+          "3.6", 
+          "3.5", 
         ]
         # TODO: undo
         # include:
@@ -132,7 +132,7 @@ jobs:
       run: |
         .ci/after_success.sh
 
-    - name: Upload coverage
-      run: bash <(curl -s https://codecov.io/bash) -F ${{ matrix.codecov-flag }}
-      env:
-        CODECOV_NAME: ${{ matrix.os }} Python ${{ matrix.python-version }}
+    # - name: Upload coverage
+    #   run: bash <(curl -s https://codecov.io/bash) -F ${{ matrix.codecov-flag }}
+    #   env:
+    #     CODECOV_NAME: ${{ matrix.os }} Python ${{ matrix.python-version }}
