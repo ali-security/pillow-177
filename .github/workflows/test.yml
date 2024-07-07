@@ -71,7 +71,7 @@ jobs:
         # sudo dpkg -i ./libmagickwand-6.q16-2_6.8.9.9-7ubuntu5.16_amd64.deb
 
         # sudo dpkg -i ./imagemagick-6.q16_6.8.9.9-7ubuntu5_amd64.deb
-        which display
+        which xv
 
 
     - name: macOS cache
