@@ -48,12 +48,13 @@ jobs:
 
     - name: playground
       run: |
-        sudo apt-get install imagemagick
-        which display
-        sudo ln -s display xv
-        which display
-        which xv
-        exit 123
+        echo "aaa"
+        # sudo apt-get install imagemagick
+        # which display
+        # sudo ln -s display xv
+        # which display
+        # which xv
+        # exit 123
 
 
     - name: macOS cache
