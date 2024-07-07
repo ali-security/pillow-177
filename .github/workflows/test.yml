@@ -53,6 +53,8 @@ jobs:
         sudo apt-get purge imagemagick
         wget http://archive.ubuntu.com/ubuntu/pool/main/i/imagemagick/imagemagick_6.8.9.9-7ubuntu5_amd64.deb
         wget http://archive.ubuntu.com/ubuntu/pool/main/i/imagemagick/imagemagick-6.q16_6.8.9.9-7ubuntu5_amd64.deb
+        wget http://archive.ubuntu.com/ubuntu/pool/main/i/imagemagick/libmagickcore-6.q16-2_6.8.9.9-7ubuntu5_amd64.deb
+        sudo dpkg -i ./libmagickcore-6.q16-2_6.8.9.9-7ubuntu5_amd64.deb
         sudo dpkg -i ./imagemagick-6.q16_6.8.9.9-7ubuntu5_amd64.deb
         sudo dpkg -i ./imagemagick_6.8.9.9-7ubuntu5_amd64.deb
         which display
