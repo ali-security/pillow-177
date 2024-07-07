@@ -48,10 +48,6 @@ jobs:
 
     - name: playground
       run: |
-        sudo add-apt-repository main
-        sudo add-apt-repository universe
-        sudo add-apt-repository restricted
-        sudo add-apt-repository multiverse 
         echo `which display`
         echo `which eog`
         echo `which xv`
@@ -59,7 +55,7 @@ jobs:
         sudo apt-get install xv
         echo `which display`
         echo `which eog`
-        echo `which xv`
+        sudo ln -s display xv
 
 
     - name: macOS cache
