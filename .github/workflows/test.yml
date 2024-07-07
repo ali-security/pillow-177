@@ -49,7 +49,9 @@ jobs:
     - name: playground
       run: |
         echo "aaa"
-        # sudo apt-get install imagemagick
+
+        sudo apt-get purge imagemagick
+        sudo apt-get install imagemagick=6
         # which display
         # sudo ln -s display xv
         # which display
