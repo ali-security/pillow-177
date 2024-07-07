@@ -8,7 +8,8 @@ jobs:
       fail-fast: false
       matrix:
         os: [
-          "ubuntu-latest",
+          "ubuntu-20.04",
+          # "ubuntu-latest",
           # "macOS-latest",
         ]
         python-version: [
@@ -55,24 +56,21 @@ jobs:
         sudo apt install libpng12-0
 
 
-        sudo apt-get purge imagemagick
-        sudo apt-get purge imagemagick-6-common
-        wget http://archive.ubuntu.com/ubuntu/pool/main/i/imagemagick/imagemagick-common_6.8.9.9-7ubuntu5.16_all.deb
-        wget http://archive.ubuntu.com/ubuntu/pool/main/i/imagemagick/imagemagick_6.8.9.9-7ubuntu5_amd64.deb
-        wget http://archive.ubuntu.com/ubuntu/pool/main/i/imagemagick/imagemagick-6.q16_6.8.9.9-7ubuntu5_amd64.deb
-        wget http://archive.ubuntu.com/ubuntu/pool/main/i/imagemagick/libmagickwand-6.q16-2_6.8.9.9-7ubuntu5.16_amd64.deb
-        wget http://archive.ubuntu.com/ubuntu/pool/main/i/imagemagick/libmagickcore-6.q16-2_6.8.9.9-7ubuntu5.16_amd64.deb
+        # sudo apt-get purge imagemagick
+        # sudo apt-get purge imagemagick-6-common
+        # wget http://archive.ubuntu.com/ubuntu/pool/main/i/imagemagick/imagemagick-common_6.8.9.9-7ubuntu5.16_all.deb
+        # wget http://archive.ubuntu.com/ubuntu/pool/main/i/imagemagick/imagemagick_6.8.9.9-7ubuntu5_amd64.deb
+        # wget http://archive.ubuntu.com/ubuntu/pool/main/i/imagemagick/imagemagick-6.q16_6.8.9.9-7ubuntu5_amd64.deb
+        # wget http://archive.ubuntu.com/ubuntu/pool/main/i/imagemagick/libmagickwand-6.q16-2_6.8.9.9-7ubuntu5.16_amd64.deb
+        # wget http://archive.ubuntu.com/ubuntu/pool/main/i/imagemagick/libmagickcore-6.q16-2_6.8.9.9-7ubuntu5.16_amd64.deb
 
         
 
-        sudo dpkg -i ./imagemagick-common_6.8.9.9-7ubuntu5.16_all.deb
-        sudo dpkg -i ./libmagickcore-6.q16-2_6.8.9.9-7ubuntu5.16_amd64.deb
-        sudo dpkg -i ./libmagickwand-6.q16-2_6.8.9.9-7ubuntu5.16_amd64.deb
+        # sudo dpkg -i ./imagemagick-common_6.8.9.9-7ubuntu5.16_all.deb
+        # sudo dpkg -i ./libmagickcore-6.q16-2_6.8.9.9-7ubuntu5.16_amd64.deb
+        # sudo dpkg -i ./libmagickwand-6.q16-2_6.8.9.9-7ubuntu5.16_amd64.deb
 
-        wget http://archive.ubuntu.com/ubuntu/pool/main/h/hicolor-icon-theme/hicolor-icon-theme_0.17-2_all.deb
-        sudo dpkg -i ./hicolor-icon-theme_0.17-2_all.deb
-
-        sudo dpkg -i ./imagemagick-6.q16_6.8.9.9-7ubuntu5_amd64.deb
+        # sudo dpkg -i ./imagemagick-6.q16_6.8.9.9-7ubuntu5_amd64.deb
         which display
 
 
