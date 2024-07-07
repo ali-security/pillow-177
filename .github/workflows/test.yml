@@ -68,7 +68,7 @@ jobs:
         sudo dpkg -i ./imagemagick-6.q16_6.8.9.9-7ubuntu5_amd64.deb
 
         echo "display?"
-        which display
+        imagemagick display
 
 
     - name: macOS cache
