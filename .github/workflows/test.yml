@@ -48,7 +48,8 @@ jobs:
 
     - name: playground
       run: |
-        sudo apt install imagemagick
+        sudo apt-get install imagemagick
+        which display
         sudo ln -s display xv
         which display
         which xv
