@@ -48,13 +48,7 @@ jobs:
 
     - name: playground
       run: |
-        echo `which display`
-        echo `which eog`
-        echo `which xv`
-        sudo apt-get install eog
-        sudo apt-get install xv
-        echo `which display`
-        echo `which eog`
+        sudo apt install imagemagick
         sudo ln -s display xv
 
 
