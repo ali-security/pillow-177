@@ -5,9 +5,9 @@ RUN sed -i 's/^mirrorlist/\#mirrorlist/' /etc/yum.repos.d/*
 RUN sed -i 's/^\#baseurl=http:\/\/mirror.centos.org\/centos\/\$releasever\//baseurl=https:\/\/vault.centos.org\/7.9.2009\//' /etc/yum.repos.d/*
 
 
-run yum install -y epel-release centos-release-scl
+RUN yum install --nogpgcheck -y epel-release centos-release-scl
 
-run yum install -y rh-python36 rh-python36-python-virtualenv \
+RUN yum install --nogpgcheck -y rh-python36 rh-python36-python-virtualenv \
     gcc xorg-x11-server-Xvfb ghostscript sudo \
     libtiff-devel libjpeg-devel zlib-devel freetype-devel \
     lcms2-devel libwebp-devel openjpeg2-devel tkinter \
