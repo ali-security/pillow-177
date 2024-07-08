@@ -11,7 +11,7 @@ jobs:
       matrix:
         docker: [
           ubuntu-20.04-focal-amd64,
-          # centos-6-amd64,
+          centos-6-amd64,
           # centos-7-amd64,
           # amazon-1-amd64,
           # amazon-2-amd64,
