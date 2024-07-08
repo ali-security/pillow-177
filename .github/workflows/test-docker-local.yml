@@ -27,7 +27,6 @@ jobs:
       run: python .github/workflows/system-info.py
 
     - name: Docker build
-      # working-directory: .github/workflows/images
       run: |
         docker build . -t builder -f .github/workflows/images/${{ matrix.docker }}/Dockerfile
 
