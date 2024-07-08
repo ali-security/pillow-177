@@ -3,7 +3,7 @@ FROM fedora:32
 
 RUN dnf install -y redhat-rpm-config \
     python3-devel python3-virtualenv make gcc \
-    libtiff-devel libjpeg-devel zlib-devel freetype-devel \
+    libtiff-devel libjpeg-devel zlib-devel freetype-devel-2.10.1 \
     lcms2-devel libwebp-devel openjpeg2-devel python3-tkinter \
     tcl-devel tk-devel harfbuzz-devel fribidi-devel libraqm-devel \
     libimagequant-devel \
