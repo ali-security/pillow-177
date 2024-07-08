@@ -19,7 +19,7 @@ gpgcheck=1
 enabled=1
 EOT
 
-# RUN rm -rf /etc/yum.repos.d/CentOS-SCLo-scl-rh.repo
+RUN yum --showduplicates list libtiff-devel
 
 RUN yum install --nogpgcheck -y epel-release centos-release-scl
 
