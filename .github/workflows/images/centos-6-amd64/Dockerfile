@@ -46,7 +46,7 @@ ADD depends /depends
 COPY .github/workflows/images/ubuntu-20.04-focal-amd64/test.sh /depends/test.sh
 RUN chmod +x depends/test.sh
 ADD .github/workflows/images/docker_install.sh /tmp/docker_install.sh
-RUN bash /tmp/docker_install.sh
+# RUN bash /tmp/docker_install.sh
 
 USER pillow
 CMD ["depends/test.sh"]
