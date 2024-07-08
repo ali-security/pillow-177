@@ -28,7 +28,7 @@ jobs:
 
     - name: Docker pull
       run: |
-        docker build . -f ./images/${{ matrix.docker }}
+        docker build . -f ./images/${{ matrix.docker }}.dockerfile
 
     - name: Docker build
       run: |
