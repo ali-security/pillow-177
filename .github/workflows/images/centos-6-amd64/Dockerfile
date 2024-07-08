@@ -3,6 +3,22 @@ FROM centos:6
 
 RUN sed -i 's/^mirrorlist/\#mirrorlist/' /etc/yum.repos.d/*
 RUN sed -i 's/^\#baseurl=http:\/\/mirror.centos.org\/centos\/\$releasever\//baseurl=https:\/\/vault.centos.org\/6.10\//' /etc/yum.repos.d/*
+
+RUN cat <<EOT >> /etc/yum.repos.d/CentOS-SCLo-scl-rh.repo 
+[centos-sclo-rh]
+name=CentOS-6.10 - SCLo rh
+baseurl=http://vault.centos.org/centos/6.10/sclo/\$basearch/rh/
+gpgcheck=1
+enabled=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-SIG-SCLo
+
+[centos-sclo-sclo]
+name=CentOS-6.10 - SCLo sclo
+baseurl=http://vault.centos.org/centos/6.10/sclo/\$basearch/sclo/
+gpgcheck=1
+enabled=1
+EOT
+
 # RUN rm -rf /etc/yum.repos.d/CentOS-SCLo-scl-rh.repo
 
 RUN yum install --nogpgcheck -y epel-release centos-release-scl
