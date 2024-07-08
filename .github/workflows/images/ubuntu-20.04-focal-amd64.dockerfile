@@ -25,7 +25,7 @@ RUN cd /depends && ./install_imagequant.sh && ./install_raqm.sh
 
 
 ADD .github/workflows//images/docker_install.sh /tmp/docker_install.sh
-RUN /tmp/docker_install.sh
+RUN bash /tmp/docker_install.sh
 
 USER pillow
 
