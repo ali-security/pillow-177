@@ -3,7 +3,7 @@ FROM centos:6
 
 RUN sed -i 's/^mirrorlist/\#mirrorlist/' /etc/yum.repos.d/*
 RUN sed -i 's/^\#baseurl=http:\/\/mirror.centos.org\/centos\/\$releasever\//baseurl=https:\/\/vault.centos.org\/7.9.2009\//' /etc/yum.repos.d/*
-
+RUN rm -rf /etc/yum.repos.d/CentOS-SCLo-scl-rh.repo
 
 RUN yum install --nogpgcheck -y epel-release centos-release-scl
 
