@@ -1,6 +1,10 @@
 # original from https://github.com/python-pillow/docker-images/blob/e968a475d63a72d5521ad4b04c9519d0de9df321/centos-6-amd64/Dockerfile
 FROM centos:6
 
+RUN sed -i 's/^mirrorlist/\#mirrorlist/' /etc/yum.repos.d/*
+RUN sed -i 's/^\#baseurl=http:\/\/mirror.centos.org\/centos\/\$releasever\//baseurl=https:\/\/vault.centos.org\/7.9.2009\//' /etc/yum.repos.d/*
+
+
 run yum install -y epel-release centos-release-scl
 
 run yum install -y rh-python36 rh-python36-python-virtualenv \
@@ -10,9 +14,6 @@ run yum install -y rh-python36 rh-python36-python-virtualenv \
     tcl-devel tk-devel libffi-devel
 
 RUN useradd --uid 1000 pillow
-
-RUN sed -i 's/^mirrorlist/\#mirrorlist/' /etc/yum.repos.d/*
-RUN sed -i 's/^\#baseurl=http:\/\/mirror.centos.org\/centos\/\$releasever\//baseurl=https:\/\/vault.centos.org\/7.9.2009\//' /etc/yum.repos.d/*
 
 RUN bash -c "source /opt/rh/rh-python36/enable && \
     /opt/rh/rh-python36/root/usr/bin/virtualenv -p python3.6 --system-site-packages /vpy3 && \
