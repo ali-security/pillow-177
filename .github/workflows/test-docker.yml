@@ -25,7 +25,7 @@ jobs:
           fedora-31-amd64,
           fedora-32-amd64,
         ]
-        dockerTag: [master]
+        dockerTag: [6.2.x]
 
     name: ${{ matrix.docker }}
 
