@@ -21,13 +21,14 @@ RUN virtualenv -p /usr/bin/python3.8 --system-site-packages /vpy3 && \
     chown -R pillow:pillow /vpy3
 
 ADD depends /depends
+COPY .github/workflows/images/ubuntu-20.04-focal-amd64/test.sh /depends/test.sh
+
 RUN cd /depends && ./install_imagequant.sh && ./install_raqm.sh
 
 
 ADD .github/workflows/images/docker_install.sh /tmp/docker_install.sh
 RUN bash /tmp/docker_install.sh
 
-ADD .github/workflows/images/ubuntu-20.04-focal-amd64/test.sh /depends/test.sh
 USER pillow
 
 
