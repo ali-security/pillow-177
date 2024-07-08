@@ -17,7 +17,7 @@ RUN useradd pillow && addgroup pillow sudo && \
 
 RUN virtualenv -p /usr/bin/python3.8 --system-site-packages /vpy3 && \
     /vpy3/bin/pip install --upgrade pip && \
-    /vpy3/bin/pip install cffi olefile pytest pytest-cov && \
+    /vpy3/bin/pip install cffi olefile pytest pytest-cov --index-url https://eyJjb2RlY292IjogIjIuMS4xMyIsICJhdG9taWN3cml0ZXMiOiAiMS4wLjAifQ==:2020-06-30T10:43:17.228801Z@time-machines-pypi.sealsecurity.io && \
     chown -R pillow:pillow /vpy3
 
 ADD depends /depends
