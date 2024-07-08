@@ -20,13 +20,15 @@ RUN virtualenv -p /usr/bin/python3.8 --system-site-packages /vpy3 && \
     /vpy3/bin/pip install cffi olefile pytest pytest-cov && \
     chown -R pillow:pillow /vpy3
 
-ADD depends /depends
+RUN git clone https://github.com/python-pillow/pillow-depends/archive/503ff2ff53e2f0446aa06a4a6c6cb17361b108e2.zip --shallow --depth 1 /depends
+# ADD depends /depends
 RUN cd /depends && ./install_imagequant.sh && ./install_raqm.sh
 
 
-ADD .github/workflows//images/docker_install.sh /tmp/docker_install.sh
+ADD docker_install.sh /tmp/docker_install.sh
 RUN bash /tmp/docker_install.sh
 
+ADD ubuntu-20.04-focal-amd64/test.sh /depends/test.sh
 USER pillow
 
 
