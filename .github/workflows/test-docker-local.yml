@@ -10,22 +10,13 @@ jobs:
       fail-fast: false
       matrix:
         docker: [
-          alpine,
-          arch,
-          ubuntu-16.04-xenial-amd64,
-          ubuntu-18.04-bionic-amd64,
-          # ubuntu-20.04-focal-amd64,
-          debian-9-stretch-x86,
-          debian-10-buster-x86,
+          ubuntu-20.04-focal-amd64,
           # centos-6-amd64,
           # centos-7-amd64,
-          centos-8-amd64,
           # amazon-1-amd64,
           # amazon-2-amd64,
-          fedora-31-amd64,
           # fedora-32-amd64,
         ]
-        dockerTag: [6.2.x]
 
     name: ${{ matrix.docker }}
 
@@ -37,13 +28,13 @@ jobs:
 
     - name: Docker pull
       run: |
-        docker pull pythonpillow/${{ matrix.docker }}:${{ matrix.dockerTag }}
+        docker build . -f images/${{ matrix.docker }}
 
     - name: Docker build
       run: |
         # The Pillow user in the docker container is UID 1000
         sudo chown -R 1000 $GITHUB_WORKSPACE
-        docker run --name pillow_container  -v $GITHUB_WORKSPACE:/Pillow pythonpillow/${{ matrix.docker }}:${{ matrix.dockerTag }}
+        docker run --name pillow_container  -v $GITHUB_WORKSPACE:/Pillow ./images/${{ matrix.docker }}.dockerfile
         sudo chown -R runner $GITHUB_WORKSPACE
 
     - name: After success
