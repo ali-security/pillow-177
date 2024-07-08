@@ -22,7 +22,6 @@ RUN virtualenv -p /usr/bin/python3.8 --system-site-packages /vpy3 && \
 
 ADD clone.sh /tmp/clone.sh
 RUN bash /tmp/clone.sh
-RUN git clone https://github.com/python-pillow/pillow-depends/archive/503ff2ff53e2f0446aa06a4a6c6cb17361b108e2.zip --shallow --depth 1 /depends
 # ADD depends /depends
 RUN cd /depends && ./install_imagequant.sh && ./install_raqm.sh
 
