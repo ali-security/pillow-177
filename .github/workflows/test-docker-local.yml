@@ -26,9 +26,10 @@ jobs:
     - name: Build system information
       run: python .github/workflows/system-info.py
 
-    - name: Docker pull
+    - name: Docker build
+      working-directory: .github/workflows/images
       run: |
-        docker build . -t builder -f .github/workflows/images/${{ matrix.docker }}.dockerfile
+        docker build . -t builder -f ${{ matrix.docker }}/Dockerfiles
 
     - name: Docker build
       run: |
