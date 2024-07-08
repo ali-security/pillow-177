@@ -243,7 +243,7 @@ class TestFileLibTiff(LibTiffTestCase):
 
         TiffImagePlugin.WRITE_LIBTIFF = False
     
-    @pytest.skip('')
+    @pytest.mark.skip('')
     def test_custom_metadata(self, tmp_path):
         assert getattr(Image.core, "libtiff_support_custom_tags", False)
         tc = namedtuple("test_case", "value,type,supported_by_default")
