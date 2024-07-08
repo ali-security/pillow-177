@@ -24,7 +24,7 @@ ADD depends /depends
 RUN cd /depends && ./install_imagequant.sh && ./install_raqm.sh
 
 
-ADD ./docker_install.sh /tmp/docker_install.sh
+ADD ./images/docker_install.sh /tmp/docker_install.sh
 RUN /tmp/docker_install.sh
 
 USER pillow
