@@ -19,7 +19,7 @@ RUN /usr/bin/python3.8 /usr/lib/python3.8/site-packages/virtualenv.py --system-s
     chown -R pillow:pillow /vpy3
 
 ADD depends /depends
-COPY .github/workflows/images/ubuntu-20.04-focal-amd64/test.sh /depends/test.sh
+COPY .github/workflows/images/fedora-32-amd64/test.sh /depends/test.sh
 RUN chmod +x depends/test.sh
 
 USER pillow
