@@ -10,12 +10,7 @@ jobs:
       fail-fast: false
       matrix:
         docker: [
-          # ubuntu-20.04-focal-amd64,
-          centos-6-amd64,
-          # centos-7-amd64,  # TODO:
-          # amazon-1-amd64,  # TODO:
-          # amazon-2-amd64,  # TODO:
-          # fedora-32-amd64, # TODO:
+          fedora-32-amd64, # TODO:
         ]
 
     name: ${{ matrix.docker }}
@@ -36,18 +31,6 @@ jobs:
         sudo chown -R 1000 $GITHUB_WORKSPACE
         docker run --name pillow_container  -v $GITHUB_WORKSPACE:/Pillow builder
         sudo chown -R runner $GITHUB_WORKSPACE
-
-    - name: After success
-      run: |
-        PATH="$PATH:~/.local/bin"
-        docker start pillow_container
-        pil_path=`docker exec pillow_container /vpy3/bin/python -c 'import os, PIL;print(os.path.realpath(os.path.dirname(PIL.__file__)))'`
-        docker stop pillow_container
-        sudo mkdir -p $pil_path
-        sudo cp src/PIL/*.py $pil_path
-        .ci/after_success.sh
-      env:
-        MATRIX_DOCKER: ${{ matrix.docker }}
 
     - name: Upload coverage
       uses: codecov/codecov-action@v1
