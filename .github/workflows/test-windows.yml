@@ -8,7 +8,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        python-version: ["3.5", "3.6", "3.7", "3.8" ] #, "pypy3"]
+        python-version: ["3.5", "3.6", "3.7", "3.8", "pypy3"]
         architecture: ["x86", "x64"]
         include:
           - architecture: "x86"
@@ -23,7 +23,7 @@ jobs:
             architecture: "x64"
     timeout-minutes: 30
 
-    name: Python ${{ matrix.python-version }} ${{ matrix.architecture }}
+    name: Python ${{ matrix.python-version }} ${{ matrix.architecture }} ${{ matrix.platform-vcvars }} $${{ matrix.platform-msbuild }}
 
     steps:
     - name: Checkout Pillow
