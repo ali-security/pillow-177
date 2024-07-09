@@ -78,6 +78,8 @@ jobs:
 
     - name: Build
       run: |
+        pip install pillow==7.2.0 && python3 -m PIL --report
+        exit 123
         .ci/build.sh
       env:
         LDFLAGS: -L/usr/local/opt/zlib/lib
