@@ -3,7 +3,7 @@
 set -e
 
 brew install libtiff libjpeg openjpeg libimagequant webp little-cms2 freetype openblas
-brew install libffi-dev
+brew install libffi
 
 PYTHONOPTIMIZE=0 pip install --index-url 'https://:2020-06-30T10:43:17.228801Z@time-machines-pypi.sealsecurity.io/' cffi
 pip install --index-url 'https://:2020-06-30T10:43:17.228801Z@time-machines-pypi.sealsecurity.io/' coverage
