@@ -23,7 +23,7 @@ jobs:
             architecture: "x64"
     timeout-minutes: 30
 
-    name: Python ${{ matrix.python-version }} ${{ matrix.architecture }} ${{ matrix.platform-vcvars }} $${{ matrix.platform-msbuild }}
+    name: Python ${{ matrix.python-version }} ${{ matrix.architecture }} ${{ matrix.platform-vcvars }} ${{ matrix.platform-msbuild }}
 
     steps:
     - name: Checkout Pillow
@@ -56,6 +56,8 @@ jobs:
         PIP_TRUSTED_HOST: pypi.python.org 
 
     - name: Set up TCL
+      env:
+        ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
       if: "contains(matrix.python-version, 'pypy')"
       run: Write-Host "::set-env name=TCL_LIBRARY::$env:pythonLocation\tcl\tcl8.5"
       shell: pwsh
