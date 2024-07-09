@@ -44,11 +44,12 @@ sudo apt-get update
 wget "http://security.ubuntu.com/ubuntu/pool/main/f/freetype/libfreetype-dev_2.10.1-2_amd64.deb"
 wget "http://security.ubuntu.com/ubuntu/pool/main/f/freetype/libfreetype6_2.10.1-2_amd64.deb"
 wget "http://security.ubuntu.com/ubuntu/pool/main/f/freetype/libfreetype6-dev_2.10.1-2_amd64.deb"
-sudo dpkg -i libfreetype-dev_2.10.1-2_amd64.deb libfreetype6_2.10.1-2_amd64.deb libfreetype6-dev_2.10.1-2_amd64.deb
 
 echo "remove libtiff5"
 sudo apt-get purge nginx-*
 sudo apt-get purge libtiff-dev libtiff5
+
+sudo dpkg -i libfreetype-dev_2.10.1-2_amd64.deb libfreetype6_2.10.1-2_amd64.deb libfreetype6-dev_2.10.1-2_amd64.deb
 
 # sudo apt-get install libtiff5=4.1.0.*
 echo "wget"
