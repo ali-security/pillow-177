@@ -19,9 +19,11 @@ pip install --index-url 'https://:2020-06-30T10:43:17.228801Z@time-machines-pypi
 # extra test images
 pushd depends && ./install_extra_test_images.sh && popd
 
-xcode-select --install
 brew info zlib
 brew install zlib
 brew upgrade
 brew install zlib
 brew --prefix zlib
+
+sudo rm -rf /Library/Developer/CommandLineTools
+xcode-select --install
