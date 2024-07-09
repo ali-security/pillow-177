@@ -11,13 +11,14 @@ jobs:
           # "ubuntu-latest",
           "macos-12",
         ]
-        # 3.7.15, 3.8.15, 3.9.15, 3.10.10
+        # to make it work:
+          # 3.7.15, 3.8.15, 3.9.15, 3.10.10
         python-version: [
           # "pypy3.7", 
           "3.8.15",
-          # "3.7", 
-          # "3.6", 
-          # "3.5", 
+          "3.7.15", 
+          "3.6.9", 
+          "3.5.12", 
         ]
         # include:
         # - python-version: "3.5"
@@ -78,8 +79,6 @@ jobs:
 
     - name: Build
       run: |
-        pip install pillow==7.2.0 && python3 -m PIL --report
-        exit 123
         .ci/build.sh
       env:
         LDFLAGS: -L/usr/local/opt/zlib/lib
