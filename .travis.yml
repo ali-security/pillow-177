@@ -48,23 +48,17 @@ matrix:
 
 install:
   - |
-    if [ "$LINT" == "true" ]; then
-      pip install --index-url 'https://:2020-06-30T10:43:17.228801Z@time-machines-pypi.sealsecurity.io/' tox
-    else
-      .ci/install_travis.sh;
-    fi
+    echo "install"
+    .ci/install_travis.sh;
 
 script:
   - |
-    if [ "$LINT" == "true" ]; then
-      tox -e lint
-    else
-      .ci/build.sh
-      .ci/test.sh
-    fi
+    echo "build"
+    .ci/build.sh
+    
+    echo "test"
+    .ci/test.sh
 
 after_success:
   - |
-    if [ "$LINT" == "" ]; then
-      .ci/after_success.sh
-    fi
+    .ci/after_success.sh
