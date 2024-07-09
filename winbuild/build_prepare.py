@@ -5,6 +5,7 @@ import subprocess
 import sys
 import time
 
+
 def cmd_cd(path):
     return "cd /D {path}".format(**locals())
 
@@ -87,6 +88,8 @@ def cmd_msbuild(
         ]
     ).format(**locals())
 # https://sourceforge.net/projects/libjpeg-turbo/2.0.4/libjpeg-turbo-2.0.4.tar.gz/download 
+
+
 # https://sourceforge.net/projects/libjpeg-turbo/files/2.0.4/libjpeg-turbo-2.0.4.tar.gz/download
 SF_MIRROR = "https://sourceforge.net"
 
@@ -105,7 +108,8 @@ header = [
 # dependencies, listed in order of compilation
 deps = {
     "libjpeg": {
-        "url": SF_MIRROR + "/projects/libjpeg-turbo/files/2.0.4/libjpeg-turbo-2.0.4.tar.gz/download",
+        "url": SF_MIRROR 
+        + "/projects/libjpeg-turbo/files/2.0.4/libjpeg-turbo-2.0.4.tar.gz/download",
         "filename": "libjpeg-turbo-2.0.4.tar.gz",
         "dir": "libjpeg-turbo-2.0.4",
         "build": [
@@ -363,7 +367,7 @@ def extract_dep(url, filename):
     file = os.path.join(depends_dir, filename)
     if not os.path.exists(file):
         ex = None
-        for i in range(5): # freetype got 406 sometimes
+        for i in range(5):  # freetype got 406 sometimes
             try:
                 print("Fetching %s (attempt %d)..." % (url, i + 1))
                 content = urllib.request.urlopen(url).read()
@@ -372,7 +376,7 @@ def extract_dep(url, filename):
                 break
             except urllib.error.URLError as e:
                 ex = e
-                print('sleeing for %d seconds before retry', i)
+                print("sleeping for %d seconds before retry", i)
                 time.sleep(i)
         else:
             raise RuntimeError(ex)
