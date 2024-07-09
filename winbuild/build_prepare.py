@@ -3,7 +3,7 @@ import shutil
 import struct
 import subprocess
 import sys
-
+import time
 
 def cmd_cd(path):
     return "cd /D {path}".format(**locals())
@@ -363,7 +363,7 @@ def extract_dep(url, filename):
     file = os.path.join(depends_dir, filename)
     if not os.path.exists(file):
         ex = None
-        for i in range(3):
+        for i in range(5): # freetype got 406 sometimes
             try:
                 print("Fetching %s (attempt %d)..." % (url, i + 1))
                 content = urllib.request.urlopen(url).read()
@@ -372,6 +372,8 @@ def extract_dep(url, filename):
                 break
             except urllib.error.URLError as e:
                 ex = e
+                print('sleeing for %d seconds before retry', i)
+                time.sleep(i)
         else:
             raise RuntimeError(ex)
 
