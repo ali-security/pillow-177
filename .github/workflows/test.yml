@@ -13,18 +13,17 @@ jobs:
           # "macOS-13",
         ]
         python-version: [
-          # "pypy3", # TODO: undo
+          "pypy3", 
           "3.8",
-          # "3.7", 
-          # "3.6", 
-          # "3.5", 
+          "3.7", 
+          "3.6", 
+          "3.5", 
         ]
-        # TODO: undo
-        # include:
-        # - python-version: "3.5"
-        #   env: PYTHONOPTIMIZE=2
-        # - python-version: "3.6"
-        #   env: PYTHONOPTIMIZE=1
+        include:
+        - python-version: "3.5"
+          env: PYTHONOPTIMIZE=2
+        - python-version: "3.6"
+          env: PYTHONOPTIMIZE=1
         # # Include new variables for Codecov
         # - os: ubuntu-latest
         #   codecov-flag: GHA_Ubuntu
@@ -46,31 +45,6 @@ jobs:
           ${{ matrix.os }}-${{ matrix.python-version }}-${{ hashFiles('**/.ci/*.sh') }}
         restore-keys: |
           ${{ matrix.os }}-${{ matrix.python-version }}-
-
-    # - name: playground
-    #   run: |
-    #     echo "aaa"
-
-    #     sudo add-apt-repository ppa:linuxuprising/libpng12
-    #     sudo apt update
-    #     sudo apt install libpng12-0
-
-
-    #     sudo apt-get purge imagemagick
-    #     sudo apt-get purge imagemagick-6-common
-    #     wget http://archive.ubuntu.com/ubuntu/pool/main/i/imagemagick/imagemagick-common_6.8.9.9-7ubuntu5.16_all.deb
-    #     wget http://archive.ubuntu.com/ubuntu/pool/main/i/imagemagick/imagemagick_6.8.9.9-7ubuntu5_amd64.deb
-    #     wget http://archive.ubuntu.com/ubuntu/pool/main/i/imagemagick/imagemagick-6.q16_6.8.9.9-7ubuntu5_amd64.deb
-    #     wget http://archive.ubuntu.com/ubuntu/pool/main/i/imagemagick/libmagickwand-6.q16-2_6.8.9.9-7ubuntu5.16_amd64.deb
-    #     wget http://archive.ubuntu.com/ubuntu/pool/main/i/imagemagick/libmagickcore-6.q16-2_6.8.9.9-7ubuntu5.16_amd64.deb
-    #     sudo dpkg -i ./imagemagick-common_6.8.9.9-7ubuntu5.16_all.deb
-    #     sudo dpkg -i ./libmagickcore-6.q16-2_6.8.9.9-7ubuntu5.16_amd64.deb
-    #     sudo dpkg -i ./libmagickwand-6.q16-2_6.8.9.9-7ubuntu5.16_amd64.deb
-    #     sudo dpkg -i ./imagemagick-6.q16_6.8.9.9-7ubuntu5_amd64.deb
-
-    #     echo "display?"
-    #     imagemagick display
-
 
     - name: macOS cache
       uses: actions/cache@v1
