@@ -10,14 +10,13 @@ jobs:
         os: [
           # "ubuntu-latest",
           "macos-12",
-          "macos-13",
         ]
         python-version: [
           # "pypy3.7", 
           "3.8",
-          "3.7", 
-          "3.6", 
-          "3.5", 
+          # "3.7", 
+          # "3.6", 
+          # "3.5", 
         ]
         # include:
         # - python-version: "3.5"
