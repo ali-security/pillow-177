@@ -21,10 +21,10 @@ matrix:
 
     - python: "3.6"
       arch: arm64
-    # - python: "3.7"
-    #   arch: ppc64le
-    # - python: "3.5"
-    #   arch: s390x
+    - python: "3.7"
+      arch: ppc64le
+    - python: "3.5"
+      arch: s390x
 
     # - python: "pypy3"
     #   name: "PyPy3 Xenial"
