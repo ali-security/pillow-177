@@ -242,7 +242,7 @@ class TestFileLibTiff(LibTiffTestCase):
             im.save(out, tiffinfo=new_ifd)
 
         TiffImagePlugin.WRITE_LIBTIFF = False
-    
+
     @pytest.mark.skip("fails due to bad dep version")
     def test_custom_metadata(self, tmp_path):
         assert getattr(Image.core, "libtiff_support_custom_tags", False)
