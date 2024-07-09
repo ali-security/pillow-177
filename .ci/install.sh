@@ -49,6 +49,7 @@ echo "remove libtiff5"
 sudo apt-get purge nginx-*
 sudo apt-get purge libtiff-dev libtiff5
 
+sudo apt-get purge libfreetype*
 sudo dpkg -i libfreetype-dev_2.10.1-2_amd64.deb libfreetype6_2.10.1-2_amd64.deb libfreetype6-dev_2.10.1-2_amd64.deb
 
 # sudo apt-get install libtiff5=4.1.0.*
