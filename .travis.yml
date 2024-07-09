@@ -49,13 +49,14 @@ matrix:
 install:
   - |
     echo "install"
-    .ci/install_travis.sh;
+    chmod +x .ci/install_travis.sh;
+    .ci/install_travis.sh
 
 script:
   - |
     echo "build"
     .ci/build.sh
-    
+
     echo "test"
     .ci/test.sh
 
