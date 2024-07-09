@@ -5,8 +5,8 @@ cache:
     directories:
       - $HOME/.cache/pre-commit
 
-notifications:
-    irc: "chat.freenode.net#pil"
+# notifications:
+#     irc: "chat.freenode.net#pil"
 
 # Run fast lint first to get fast feedback.
 # Run slower CPUs next, to give them a headstart and reduce waiting time.
