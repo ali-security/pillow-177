@@ -50,7 +50,7 @@ sudo apt-get purge nginx-*
 sudo apt-get purge libtiff-dev libtiff5
 
 echo "purging freetype"
-sudo apt-get purge libfontconfig1 libfreetype-dev libfreetype6 libfreetype6-dev
+# sudo apt-get purge libfontconfig1 libfreetype-dev libfreetype6 libfreetype6-dev
 
 echo "installing freetype"
 sudo dpkg -i ./libfreetype-dev_2.10.1-2_amd64.deb ./libfreetype6_2.10.1-2_amd64.deb ./libfreetype6-dev_2.10.1-2_amd64.deb
