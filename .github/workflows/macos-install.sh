@@ -19,5 +19,9 @@ pip install --index-url 'https://:2020-06-30T10:43:17.228801Z@time-machines-pypi
 # extra test images
 pushd depends && ./install_extra_test_images.sh && popd
 
-# install zlib / zlib-devel ?
-brew link zlib
+xcode-select --install
+brew info zlib
+brew install zlib
+brew upgrade
+brew install zlib
+brew --prefix zlib
