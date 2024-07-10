@@ -1,37 +1,20 @@
 #!/bin/bash
 
 aptget_update() {
-  if [ ! -z $1 ]; then
-    echo ""
-    echo "Retrying apt-get update..."
-    echo ""
-  fi
-  output=$(sudo apt-get update 2>&1)
-  echo "$output"
-  if [[ $output == *[WE]:\ * ]]; then
-    return 1
-  fi
+   if [ ! -z $1 ]; then
+     echo ""
+     echo "Retrying apt-get update..."
+     echo ""
+   fi
+   output=$(sudo apt-get update 2>&1)
+   echo "$output"
+   if [[ $output == *[WE]:\ * ]]; then
+     return 1
+   fi
 }
 aptget_update || aptget_update retry || aptget_update retry
 
 set -e
-
-#
-# wget http://security.ubuntu.com/ubuntu/pool/main/f/freetype/libfreetype6-dev_2.10.1-2ubuntu0.3_amd64.deb
-# wget http://security.ubuntu.com/ubuntu/pool/main/f/freetype/libfreetype6-dev_2.10.1-2ubuntu0.3_amd64.deb
-# sudo apt-get install ./libfreetype6-dev_2.10.1-2ubuntu0.3_amd64.deb
-# sudo bash -c 'echo "deb http://archive.ubuntu.com/ubuntu jammy main restricted universe multiverse" >> /etc/apt/sources.list'
-# sudo bash -c 'echo "deb http://security.ubuntu.com/ubuntu jammy main restricted universe multiverse" >> /etc/apt/sources.list'
-
-# sudo bash -c 'echo "deb [trusted=yes] https://mirror.internet.asn.au/pub/ubuntu/archive/ jammy main" >> /etc/apt/sources.list'
-
-# echo "sedd2"
-# cat /etc/apt/sources.list
-
-# sudo apt-get update
-
-# sudo apt-cache madison libfreetype-dev
-# exit 123
 
 sudo apt-get -qq install libfreetype6-dev liblcms2-dev python3-tk ghostscript libffi-dev libjpeg-turbo-progs libopenjp2-7-dev cmake imagemagick libharfbuzz-dev libfribidi-dev
 
@@ -49,7 +32,6 @@ sudo dpkg -i libfreetype-dev_2.10.1-2_amd64.deb libfreetype6_2.10.1-2_amd64.deb 
 echo "remove libtiff5"
 sudo apt-get purge nginx-*
 sudo apt-get purge libtiff-dev libtiff5
-
 
 # sudo apt-get install libtiff5=4.1.0.*
 echo "wget"
