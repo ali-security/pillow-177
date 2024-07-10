@@ -1,6 +1,7 @@
-import pytest
 import sys
-from PIL import Image, _util
+
+import pytest
+from PIL import Image
 
 from .helper import assert_image_equal, hopper
 

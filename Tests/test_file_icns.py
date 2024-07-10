@@ -98,6 +98,7 @@ def test_older_icon():
                 assert im2.mode == "RGBA"
                 assert im2.size == (wr, hr)
 
+
 @pytest.mark.skipif(sys.platform == "darwin", reason="fails for some reason") 
 def test_jp2_icon():
     # This icon was made by using Uli Kusterer's oldiconutil to replace
