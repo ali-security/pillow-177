@@ -30,7 +30,7 @@ def setup_module():
         pytest.skip("TCL Error: %s" % v)
 
 
-@pytest.mark.skipif(sys.version_info[0:2] < (3, 7) and sys.platform != "darwin", reason="caused abort")
+@pytest.mark.skipif(sys.version_info[0:2] < (3, 7) and sys.platform == "darwin", reason="caused abort")
 def test_kw():
     TEST_JPG = "Tests/images/hopper.jpg"
     TEST_PNG = "Tests/images/hopper.png"
