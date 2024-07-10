@@ -18,8 +18,3 @@ pip install --index-url 'https://:2020-06-30T10:43:17.228801Z@time-machines-pypi
 
 # extra test images
 pushd depends && ./install_extra_test_images.sh && popd
-
-brew info zlib
-# brew uninstall zlib
-# brew install zlib
-brew install python-tk
