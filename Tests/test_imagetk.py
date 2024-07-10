@@ -1,5 +1,6 @@
 import pytest
-from PIL import Image
+import sys
+from PIL import Image, _util
 
 from .helper import assert_image_equal, hopper
 
@@ -29,6 +30,7 @@ def setup_module():
         pytest.skip("TCL Error: %s" % v)
 
 
+@pytest.mark.skipif(sys.version_info[0:2] < (3, 7) and sys.platform != "darwin", reason="caused abort")
 def test_kw():
     TEST_JPG = "Tests/images/hopper.jpg"
     TEST_PNG = "Tests/images/hopper.png"
