@@ -18,7 +18,6 @@ jobs:
           debian-10-buster-x86,
           centos-8-amd64,
           fedora-31-amd64,
-          #
           centos-6-amd64,
           centos-7-amd64,
           amazon-1-amd64,

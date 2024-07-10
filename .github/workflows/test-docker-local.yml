@@ -10,7 +10,7 @@ jobs:
       fail-fast: false
       matrix:
         docker: [
-          fedora-32-amd64, # TODO:
+          fedora-32-amd64, 
         ]
 
     name: ${{ matrix.docker }}
