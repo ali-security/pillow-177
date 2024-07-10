@@ -9,7 +9,7 @@ jobs:
       matrix:
         os: [
           # "ubuntu-latest",
-          "macos-13",
+          "macos-12",
         ]
         # to make it work:
           # 3.7.15, 3.8.15, 3.9.15, 3.10.10
