@@ -7,7 +7,7 @@ aptget_update()
         echo "Retrying apt-get update..."
         echo ""
     fi
-    output=`sudo apt-get update 2>&1`
+    output=$(sudo apt-get update 2>&1)
     echo "$output"
     if [[ $output == *[WE]:\ * ]]; then
         return 1
