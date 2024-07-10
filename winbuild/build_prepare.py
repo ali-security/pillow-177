@@ -376,9 +376,8 @@ def extract_dep(url, filename):
                 break
             except urllib.error.URLError as e:
                 ex = e
-                print(
-                    "sleeping for %d seconds before retry" % i
-                )  # sometimes fails, might be due to CERTIFICATE_VERIFY_FAILED regardless of retry
+                # sometimes fails, might be due to CERTIFICATE_VERIFY_FAILED regardless of retry
+                print("sleeping for %d seconds before retry" % i)
                 time.sleep(i)
         else:
             raise RuntimeError(ex)
